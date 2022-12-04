@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Library Management System</title>
+<link rel="stylesheet" href="bootstrap.min.css"/>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+html{
+	min-height:100%;
+}
+body {
+	font-family: 'Poppins', sans-serif;
+	background: linear-gradient(darkblue,violet);
+
+}
+	h1{
+	background-color:Black;
+	background: linear-gradient(to top left,red,blue);
+	text-align:center;
+	color:white;
+	
+  	
+	}
+	.col-md-6{
+	background-color:gray;
+	border-style: ridge;
+	display: flex;
+  	flex-direction: right;
+  	margin-bottom:auto;
+  	
+	}
+	.admin{
+	padding:40px;
+	align-content:center;
+	
+	}
+	.librarian{
+	padding:40px;
+		flex-direction: bottom;
+	}
+	#btn{
+	background-color:green;
+	background: linear-gradient(to top left,green,blue);
+	}
+</style>
+</head>
+<body>
+
+
+<div class="container-fluid" >
+<h1>Welcome to Library Portal</h1>
+
+
+<div class="row" id="mid">
+  <div class="col-md-6">
+  <h3>Student Login</h3>
+  <form action="StudentLogin" method="post" style="width:300px" class="admin">
+  <div class="form-group">
+     <label for="uname">Username </label>
+    <input type="text" class="form-control"  name="uname" placeholder="Username"/>
+  </div>
+  <div class="form-group">
+    <label for="password1">Password</label>
+    <input type="password" class="form-control" name="pwd" id="password1" placeholder="Password"/>
+  </div>  
+  <button type="submit" class="btn btn-primary" id="btn">Login</button>
+  <a href="studregform.html"><button type="button" class="btn btn-primary" id="btn">Register</button></a>
+</form>
+  
+  </div>
+  <div class="col-md-6">
+  <h3>Librarian Login</h3>
+  <form action="LibrarianLogin" method="post" style="width:300px" class="librarian">
+  <div class="form-group">
+    <label for="uname">Username <font color="red"> * </font></label>
+    <input type="text" class="form-control"  name="uname" placeholder="Username" />
+  </div>
+  <div class="form-group">
+    <label for="password1">Password<font color="red"> * </font></label>
+    <input type="password" class="form-control" id="password1" name="pwd" placeholder="Password"/>
+  </div>  
+  <input type="submit" class="btn btn-primary" id="btn" value="Login">
+  <button type="signup" class="btn btn-primary" id="btn">Register</button>
+</form>
+</div>
+  </div>
+</div>
+
+  <script src="jquery.min.js"></script>
+  <script src="bootstrap.min.js"></script>
+</body>
+</html>

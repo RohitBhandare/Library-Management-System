@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+input{
+  display:block;
+  width:100%;
+  padding:.2em;
+  margin: .2em 0 .6em;
+  font-size:1.2em;
+}
+body{
+  padding:5%;
+  background: black;
+  max-width:30em;
+  margin: 6% auto;
+  box-shadow:1em 1em 0 0 rgba(0,0,0,.2);
+  font-family:Raleway, sans-serif;
+}

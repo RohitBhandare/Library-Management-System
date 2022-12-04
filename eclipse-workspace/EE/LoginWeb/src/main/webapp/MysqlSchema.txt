@@ -1,0 +1,86 @@
++------------------------------+
+| Tables_in_library_management |
++------------------------------+
+| books                        |
+| fine                         |
+| issuebook                    |
+| librarian                    |
+| studentlogin                 |
++------------------------------+
+mysql> desc books;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| BOOkID   | varchar(50) | NO   | PRI | NULL    |       |
+| NAME     | varchar(50) | YES  |     | NULL    |       |
+| AUTHOR   | varchar(50) | YES  |     | NULL    |       |
+| QUANTITY | int         | YES  |     | NULL    |       |
+| ISSUED   | int         | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+mysql> desc fine;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| BookID      | int         | YES  |     | NULL    |       |
+| Rno         | int         | YES  |     | NULL    |       |
+| Name        | varchar(50) | YES  |     | NULL    |       |
+| mon         | bigint      | YES  |     | NULL    |       |
+| IssueDate   | date        | YES  |     | NULL    |       |
+| Return_Date | date        | YES  |     | NULL    |       |
+| Days        | int         | YES  |     | NULL    |       |
+| Status      | varchar(50) | YES  |     | NULL    |       |
+| Fine        | bigint      | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+
+mysql> desc issuebook;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| BookID    | int         | YES  |     | NULL    |       |
+| Rno       | int         | YES  |     | NULL    |       |
+| Name      | varchar(50) | YES  |     | NULL    |       |
+| mon       | bigint      | YES  |     | NULL    |       |
+| IssueDate | date        | YES  |     | NULL    |       |
+| Status    | varchar(50) | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+mysql> desc librarian;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| Empid | int         | NO   | PRI | NULL    |       |
+| Name  | varchar(50) | YES  |     | NULL    |       |
+| pwd   | varchar(50) | YES  |     | NULL    |       |
+| email | varchar(50) | YES  |     | NULL    |       |
+| mob   | int         | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+
+mysql> desc studentlogin;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| Rno      | int         | NO   | PRI | NULL    |       |
+| Name     | varchar(50) | YES  |     | NULL    |       |
+| Branch   | varchar(50) | YES  |     | NULL    |       |
+| Year     | varchar(50) | YES  |     | NULL    |       |
+| Address  | varchar(50) | YES  |     | NULL    |       |
+| pwd      | varchar(50) | YES  |     | NULL    |       |
+| email    | varchar(50) | YES  |     | NULL    |       |
+| Phone    | varchar(50) | YES  |     | NULL    |       |
+| username | varchar(50) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+
+Stored Procedure-
+create procedure Library(in Rno1 int,bookid1 int)
+	begin
+		declare diff int;
+		declare amt int;
+		declare date date;
+		declare mob1 bigint;
+		declare status1 varchar(50);
+		declare name1 varchar(50);
+		select IssueDate,status,Mon,name into date,status1,mob1,name1 from IssueBook where Rno=Rno1 and bookid=bookid1;
+		set diff=datediff(curdate(),date);
+		if diff>15 then
+			insert into Fine values(bookid1,Rno1,name1,mob1,date,curdate(),diff,status1,diff*10);
+		end if;
+	end;//
