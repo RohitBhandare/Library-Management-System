@@ -76,5 +76,5 @@ diff*0);
 ## Contributing
 
 Contributions are always welcome!
-[Pranav Gadkh] (https://github.com/Pranavgadakh0108/)
-
+<br>
+<a href="https://github.com/Pranavgadakh0108/" target="_blank">@Pranav Gadkh</a>
