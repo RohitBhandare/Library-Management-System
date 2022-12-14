@@ -1,9 +1,7 @@
 
 # Library Management System
 
-Nowadays, in our society, computer technology is the most important advancement as people move along in this computerized world. These changes have big effects on man’s life; by making it easier and more convenient. Librarians have the responsibility not only to know how to manage a computerized library system but also to be aware that these changes will have a big help to them.
-Performing library management manually is quite difficult, as is maintaining its records in order. These are the issues that the College Library Management System should address and answer.
-The College Library Management System  is a program that helps librarians manage a library. Based on the needs of users, the system could provide a minimal set of functionalities, such as adding and updating members and books. This system can also handle check-in specifications, borrower's transactions and more.
+The college library management system is a web-based application that allows users to easily manage the library's catalog and borrower information. The frontend of the application is built using HTML, CSS, and JavaScript, providing a user-friendly interface for users to interact with. The backend of the application is powered by Java servlets and JSP, which handle the processing of data and communication with the database. The database itself is built using MySQL, and all sensitive data is encrypted using AES encryption for added security. Overall, this system allows for efficient and secure management of the library's resources.
 
 # Technology used
 ```bash
